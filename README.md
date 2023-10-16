@@ -1,3 +1,3 @@
 # SQL
 Archivio progetti database sql
-![xd](banner.gif)
+![xd](bannner.gif)
