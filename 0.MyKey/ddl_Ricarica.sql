@@ -9,6 +9,3 @@ CREATE TABLE Ricarica(
 
     PRIMARY KEY(id)
 );
-
-
-
