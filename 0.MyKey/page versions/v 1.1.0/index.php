@@ -7,12 +7,8 @@
  * - Visualizza il contenuto della tabella Uomo nel database.
  * - Visualizza un messaggio di conferma di avvenuto inserimento record.
  */
-$location = "isthedogoutside.site:3306";
-$user = "isthed_bar0x";
-$password = "RobertoBolle4502";
-$dbName = "isthed_bar0x";
-
-
+$user = "root";
+$password = "root";
 if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
 
 require("head.php");
@@ -43,10 +39,10 @@ echo("<form action=\"index.php\">
         <input type=\"text\" class=\"form-control\" id=\"importo\" name=\"importo\">
     </div>
     <div class=\"mb-3\">
-        <label for=\"data_transazione\" class=\"form-label\">Data: AAAA-MM-GG</label>
+        <label for=\"data_transazione\" class=\"form-label\">Data:</label>
         <input type=\"text\" class=\"form-control\" id=\"data_transazione\" name=\"data_transazione\" placeholder=\" notazione\">
     </div>
-    <input type=\"hidden\" name=\"scelta\" value=\"addRecord\">
+    <input type=\"hidden\" name=\"scelta\" value=\"addUomo\">
     <button type=\"submit\" class=\"btn btn-primary\">Inserisci nuovo record</button>
 </form>");
 
@@ -58,8 +54,10 @@ if($sc == "addUomo"){
     $i = $_REQUEST['importo'];
     $d = $_REQUEST['data_transazione'];
 
-    $sql = "INSERT INTO Ricarica(nome, cognome, importo, data_transazione) VALUES('$n','$c',$i,'$d');";
-    $db = new mysqli($location,$user,$password,$tabName);
+    $sql = "INSERT INTO Ricarica(nome, cognome, importo, data_transazione)
+            VALUES('$n','$c',$i,'$d');";
+
+    $db = new mysqli("localhost",$user,$password,"mykey");
 
     if($db->query($sql)){
         echo("<div class=\"alert alert-success\">
@@ -88,7 +86,7 @@ echo ("
 ");
 
 
-$db = new mysqli($location,$user,$password,$dbName); // apro uno stream dati con il database -> mysql
+$db = new mysqli("localhost",$user,$password,"mykey"); // apro uno stream dati con il database -> mysql
 $sql = "SELECT *        
     FROM ricarica";
 $resultSet = $db->query($sql);
@@ -138,16 +136,16 @@ echo("<table class=\"table table-striped\">
     </thead> <tbody>
 ");
 
-printTotalFromName("Mattia",$location, $user, $password, $dbName);
-printTotalFromName("Jacopo",$location, $user, $password, $dbName);
-printTotalFromName("Davide",$location, $user, $password, $dbName);
+printTotalFromName("Mattia", $user, $password);
+printTotalFromName("Jacopo", $user, $password);
+printTotalFromName("Davide", $user, $password);
 
 echo("</tbody> </table>");
 require("foot.php");
 
-function printTotalFromName($fname,$_location, $_user, $_password, $_dbName) {
+function printTotalFromName($fname, $_user, $_password) {
     //faccio la query
-    $db = new mysqli($_location,$_user,$_password,$_dbName); 
+    $db = new mysqli("localhost",$_user,$_password,"mykey"); 
     $sql = "
     SELECT nome, sum(saldo), data_transazione
     FROM ricarica
@@ -165,7 +163,3 @@ function printTotalFromName($fname,$_location, $_user, $_password, $_dbName) {
     ");
 }
 ?>
-
-Mattia Baroni
-3.55
-2023-11-03
