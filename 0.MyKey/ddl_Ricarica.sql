@@ -9,3 +9,14 @@ CREATE TABLE Ricarica(
 
     PRIMARY KEY(id)
 );
+
+
+DROP TABLE IF EXISTS Utente;
+
+CREATE TABLE Utente(
+    id integer auto_increment,
+    referente varchar(15) NOT NULL,
+    password varchar(15) NOT NULL,
+
+    PRIMARY KEY(id)
+) CHARACTER SET=utf8_bin;
