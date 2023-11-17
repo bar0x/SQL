@@ -21,29 +21,10 @@ echo("<br><div class=\"alert alert-dark\"><h3>MyKey 1.0 DataBase form <span clas
 
 
 echo ("
-    
+    <h1><strong>Form inserimento</h1>
     <h3><small class=\"text-muted\">Crea un nuovo record qui</small>
     <br></h3> 
 ");
-
-echo("
-
-<h5 class=\"mb-0\" id=\"headingOne\">
-    <h1><strong>Form inserimento</h1>
-    <button class=\"btn btn-link\" data-toggle=\"collapse\" data-target=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\"><h3><small class=\"text-muted\">Crea un nuovo record qui</small></button>
-</h5>
-
-
-<div id=\"collapseOne\" class=\"collapse show\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\">
-    <div class=\"card-body\">
-    inserisci qui lo schifo
-    </div>
-</div>
-
-");
-
-
-
 
 
 
