@@ -1,34 +1,33 @@
 <?php
-if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
-/**
- * Il codice seguente si bassa sulla schematizzazione ER del file er01.drawio persente nella
- * cartella /UD 2 - mySQL Basics.
- * Il codice permette:
- * - Visualizza il form per l'inserimento di un nuovo record.
- * - Visualizza il contenuto della tabella Uomo nel database.
- * - Visualizza un messaggio di conferma di avvenuto inserimento record.
- */
+/** INFO UTILI:
+ * -Autor: Mattia Baroni,
+ * -Version: 1.2.0,
+ * -bootstrapActualVersion: 5.3.2 (https://getbootstrap.com/docs/5.3/getting-started/introduction/),
+*/
 
- $location = "sql204.infinityfree.com";
+if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
+
+$location = "sql204.infinityfree.com";
 $user = "if0_35420928";
 $password = "6DFJf1O742jiN";
 $dbName = "if0_35420928_baro";
 
 require("head.php");
 
-// costruisco il form bootstrap per l'inserimento dei dati di un nuovo record.
-echo("<br><div class=\"alert alert-dark\"><h3>MyKey 1.0 DataBase form <span class=\"badge badge-secondary\">DUX EDITION</span> </h3></div>");
+//titolo
+echo("<br><div class=\"alert alert-dark\"><h3>MyKey 1.0 DataBase form <span class=\"badge badge-secondary\">NEW EDITION</span> </h3></div>");
 
+//form inserimento con effetto collapse
+echo("
+<hr class=\"mt-5 mb-5\">
+<h1><strong>Form inserimento</h1>
 
-echo ("
-    <h1><strong>Form inserimento</h1>
-    <h3><small class=\"text-muted\">Crea un nuovo record qui</small>
-    <br></h3> 
-");
+<button class=\"btn\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapseExample\" aria-expanded=\"false\" aria-controls=\"collapseExample\">
+    <h3><small class=\"text-muted\">inserisci un record qui</small>
+</button>
 
-
-
-echo("<form action=\"index.php\">
+<div class=\"collapse\" id=\"collapseExample\">
+    <form action=\"index.php\">
     <div class=\"mb-3\">
         <label for=\"nome\" class=\"form-label\">Nome:</label>
         <input type=\"text\" class=\"form-control\" id=\"nome\" name=\"nome\">
@@ -42,12 +41,15 @@ echo("<form action=\"index.php\">
         <input type=\"text\" class=\"form-control\" id=\"importo\" name=\"importo\">
     </div>
     <div class=\"mb-3\">
-        <label for=\"data_transazione\" class=\"form-label\">Data: AAAA-MM-GG</label>
-        <input type=\"text\" class=\"form-control\" id=\"data_transazione\" name=\"data_transazione\" placeholder=\" notazione\">
+        <label for=\"data_transazione\" class=\"form-label\">Data:</label>
+        <input type=\"text\" class=\"form-control\" id=\"data_transazione\" name=\"data_transazione\" placeholder=\" notazione AAAA-MM-GG\">
     </div>
     <input type=\"hidden\" name=\"scelta\" value=\"addRecord\">
     <button type=\"submit\" class=\"btn btn-primary\">Inserisci nuovo record</button>
-</form>");
+    </form>
+</div>
+");
+
 
 // se $sc testata all'inizio della pagina è diversa da null e vale "addRecord" allora recupero le altre variabili dalla HTTP Request.
 // poi eseguo la query di inserimento del nuovo record.
@@ -57,7 +59,7 @@ if($sc == "addRecord"){
     $i = $_REQUEST['importo'];
     $d = $_REQUEST['data_transazione'];
 
-    $sql = "INSERT INTO Ricarica(nome, cognome, importo, data_transazione) VALUES('$n','$c',$i,'$d');";
+    $sql = "INSERT INTO ricarica(nome, cognome, importo, data_transazione) VALUES('$n','$c',$i,'$d');";
     $db = new mysqli($location,$user,$password,$tabName);
 
     if($db->query($sql)){
@@ -162,13 +164,5 @@ function printTotalFromName($fname,$_location, $_user, $_password, $_dbName) {
     ");
     }
 
-
-
-/* 
-
-Mattia Baroni
-3.55
-2023-11-03
-*/
 
 ?>
