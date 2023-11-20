@@ -78,13 +78,14 @@ if($sc == "addRecord"){
     }
 
     $db->close();
+    echo "<meta http-equiv='refresh' content='0'>";
 }
 
 
 echo ("
     <hr class=\"mt-5 mb-5\">
     <h1><strong>Storico Transazioni</h1>
-    <h3><small class=\"text-muted\">presenti nel database</small>
+    <h3><small class=\"text-muted\"> presenti nel database</small>
     <br> <br> <br> 
 ");
 
@@ -123,7 +124,7 @@ echo("</tbody> </table>");
 
 echo("<hr class=\"mt-5 mb-5\">
     <h1><strong>Prospetto finale</h1>
-    <h3><small class=\"text-muted\">Totale ricarica per persona</small>
+    <h3><small class=\"text-muted\"> Totale ricarica per persona</small>
     <br> <br> <br>
 ");
 
