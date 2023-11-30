@@ -17,7 +17,7 @@ CREATE TABLE Reparti (
 ) ENGINE=InnoDB;
 
 
-DROP TABLE IF EXISTS Dipendenti;
+DROP TABLE IF EXISTS Dipendenti; 
 CREATE TABLE Dipendenti (
     id integer auto_increment,
     nome varchar(20) NOT NULL,
