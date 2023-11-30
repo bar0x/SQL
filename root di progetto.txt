@@ -1,0 +1,10 @@
+organizzazione root di progetto:
+
+\CS1_7pag123
+    \1.0
+        \require
+        \img
+        \docs
+        \php
+        index.php
+    index.php
