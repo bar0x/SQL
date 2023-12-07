@@ -30,6 +30,7 @@ switch($sc){
             <br>
             <input type=\"hidden\" name=\"scelta\" value=\"addNuovaCitta\">
             <button type=\"submit\" class=\"btn btn-primary\">Inserisci nuovo record</button>
+            </div>
         </form>
 
         ");
@@ -55,6 +56,8 @@ switch($sc){
         break;
     }
     case "listaCitta":{
+        echo("<br><div class=\"alert alert-dark\"><h3>Listaggio città presenti nel DataBase <span class=\"badge badge-secondary\">v1.0</span> </h3></div>");
+        
         $db = new mysqli($location,$user,$password,$dbName); // apro uno stream dati con il database -> mysql
         $sql = "SELECT * FROM citta";
         $resultSet = $db->query($sql);
