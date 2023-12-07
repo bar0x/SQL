@@ -1,6 +1,9 @@
+DROP TABLE IF EXISTS Dipendenti; 
+DROP TABLE IF EXISTS Reparti;
 DROP TABLE IF EXISTS Citta;
+
 CREATE TABLE Citta (
-    id integer auto_increment,
+    id integer unsigned auto_increment,
     nomeCitta varchar(20) NOT NULL,
 
     PRIMARY KEY (id)
@@ -8,7 +11,7 @@ CREATE TABLE Citta (
 
 DROP TABLE IF EXISTS Reparti;
 CREATE TABLE Reparti (
-    id integer auto_increment,
+    id integer unsigned auto_increment,
     nomeReparto varchar(20) NOT NULL,
     idCitta integer unsigned,
 
@@ -19,14 +22,14 @@ CREATE TABLE Reparti (
 
 DROP TABLE IF EXISTS Dipendenti; 
 CREATE TABLE Dipendenti (
-    id integer auto_increment,
+    id integer unsigned auto_increment,
     nome varchar(20) NOT NULL,
     cognome varchar(20) NOT NULL,
-    --FKs
+    
     idReparto integer unsigned,
     idCittaReparto integer unsigned,
 
-    --relazioni
+    
     PRIMARY KEY (id),
     foreign key(idReparto) references Reparti(id),
     foreign key(idCittaReparto) references Citta(id)

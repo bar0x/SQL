@@ -16,10 +16,11 @@ function scriviNavbar(){
                 <li class=\"nav-item dropdown\">
                     <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                     Città
-                    </a>
+                    </a> 
                     <ul class=\"dropdown-menu\">
-                        <li><a class=\"dropdown-item\" href=\"citta.php\">Nuova Città</a></li>
-                        <li><a class=\"dropdown-item\" href=\"#\">Lista Città</a></li>
+                        <li><a class=\"dropdown-item\" href=\"citta.php?scelta=formNuovaCitta\">Nuova Città</a></li>
+                        <li><a class=\"dropdown-item\" href=\"citta.php?scelta=listaCitta\">Lista Città</a></li>
+                        <li><a class=\"dropdown-item\" href=\"citta.php?scelta=deleteCitta\">Rimuovi Città</a></li>
                     </ul>
                 </li>
 
@@ -30,6 +31,7 @@ function scriviNavbar(){
                     <ul class=\"dropdown-menu\">
                         <li><a class=\"dropdown-item\" href=\"reparto.php\">Nuovo Reparto</a></li>
                         <li><a class=\"dropdown-item\" href=\"#\">Lista Reparti</a></li>
+                        <li><a class=\"dropdown-item\" href=\"#\">Rimuovi un reparto</a></li>
                     </ul>
                 </li>
 
@@ -40,9 +42,9 @@ function scriviNavbar(){
                     <ul class=\"dropdown-menu\">
                         <li><a class=\"dropdown-item\" href=\"dipendente.php\">Nuovo Dipendente</a></li>
                         <li><a class=\"dropdown-item\" href=\"#\">Lista Dipendenti</a></li>
+                        <li><a class=\"dropdown-item\" href=\"#\">Rimuovi un Reparte</a></li>
                     </ul>
                 </li>
-            
             </ul>
         </div>
         </div>
