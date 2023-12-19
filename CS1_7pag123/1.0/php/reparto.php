@@ -10,6 +10,12 @@ require("../include/funz.php");
 
 scriviNavbar();
 
+if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
+
+$location = "localhost";
+$user = "root";
+$password = "root";
+$dbName = "scuola_2324";
 
 
 
@@ -55,7 +61,7 @@ switch($sc){
         break;
     }
     case "listaReparti":{
-        echo("<br><div class=\"alert alert-dark\"><h3>Listaggio città presenti nel DataBase <span class=\"badge badge-secondary\">v1.0</span> </h3></div>");
+        echo("<br><div class=\"alert alert-dark\"><h3>Listaggio reparti presenti nel DataBase <span class=\"badge badge-secondary\">v1.0</span> </h3></div>");
         
         $db = new mysqli($location,$user,$password,$dbName); // apro uno stream dati con il database -> mysql
         $sql = "SELECT * FROM reparti";
@@ -87,4 +93,35 @@ switch($sc){
     }
 }
 require("../include/foot.php");
+
+/* 
+
+case "formNuovoReparto":{
+            echo('<form action="reparto.php">
+                <div class="mb-3">
+                    <label for="nomeReparto" class="form-label">Nome Reparto:</label>
+                    <input type="text" class="form-control" id="nomeReparto" name="nomeReparto" placeholder="Inserisci il nome di un reparto">
+                </div>');
+                
+                $db = new mysqli("localhost", "root", "", "scuola2324");
+                $sql = "SELECT * FROM Citta";
+                $rs = $db->query($sql);
+                $db->close();
+
+                echo('<div class="mb-3">
+                    <label for="idCitta" class="form-label">Città del reparto:</label>
+                    <select class="form-select" id="idCitta" name="idCitta" aria-label="Default select example">');
+                    while($record = $rs->fetch_assoc()){
+                        echo('<option value="'.$record['id'].'">'.$record['nomeCitta'].'</option>');
+                    }
+                echo('</select>
+                </div>');
+            echo('
+                <input type="hidden" name="scelta" value="addNuovoReparto">
+                <button type="submit" class="btn btn-primary">Inserisci nel Database</button>
+            </form>');
+            break;
+        }
+*/
+
 ?>
