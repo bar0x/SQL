@@ -1,0 +1,1 @@
+xcopy C:\Users\baron\Desktop\programming\SQL /e C:\Program Files\UwAmp\www\SQL
