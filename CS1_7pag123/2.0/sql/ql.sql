@@ -15,3 +15,5 @@ WHERE c.id = rep.idCittaReparto AND (c.nomeCitta = 'Mantova' OR c.nomeCitta = 'V
 SELECT d.nome, d.cognome
 FROM Dipendente AS d, Citta AS c, Reparto as rep
 WHERE d.idReparto = rep.id AND rep.idCittaReparto = c.id AND c.nomeCitta = 'Mantova'
+
+-- visualizzare tutti i dipendenti di un reparto (se ne esistono) per la successiva eliminazione del reparto.
