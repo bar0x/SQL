@@ -7,15 +7,21 @@
 
 if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
 
+if(isset($_REQUEST['nome'])) $n = $_REQUEST['nome']; else $sc = null;
+if(isset($_REQUEST['cognome'])) $c = $_REQUEST['cognome']; else $sc = null;
+if(isset($_REQUEST['importo'])) $i = $_REQUEST['importo']; else $sc = null;
+if(isset($_REQUEST['data_transazione'])) $d = $_REQUEST['data_transazione']; else $sc = null;
+
+
 $location = "sql204.infinityfree.com";
 $user = "if0_35420928";
 $password = "6DFJf1O742jiN";
 $dbName = "if0_35420928_baro";
 
 require("head.php");
-
+require("functions.php");
 //titolo
-echo("<br><div class=\"alert alert-dark\"><h3>MyKey 1.0 DataBase form <span class=\"badge badge-secondary\">NEW EDITION</span> </h3></div>");
+echo("<br><div class=\"alert alert-dark\"><h3>cd key games 1.0 DataBase form <span class=\"badge badge-secondary\">NEW EDITION</span> </h3></div>");
 
 //form inserimento con effetto collapse
 echo("
@@ -78,7 +84,6 @@ if($sc == "addRecord"){
     }
 
     $db->close();
-    echo "<meta http-equiv='refresh' content='0'>";
 }
 
 
@@ -137,12 +142,11 @@ echo("<table class=\"table table-striped\">
         </tr>
     </thead> <tbody>
 ");
-
+require("foot.php");
 printTotalFromName("Mattia",$location, $user, $password, $dbName);
 printTotalFromName("Jacopo",$location, $user, $password, $dbName);
 printTotalFromName("Davide",$location, $user, $password, $dbName);
 
 echo("</tbody> </table>");
-require("foot.php");
-require("functions.php");
+
 ?>
