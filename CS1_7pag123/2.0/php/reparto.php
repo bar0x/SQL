@@ -64,7 +64,7 @@ switch($sc){
         echo("<br><div class=\"alert alert-dark\"><h3>Listaggio reparti presenti nel DataBase <span class=\"badge badge-secondary\">v1.0</span> </h3></div>");
         
         $db = new mysqli($location,$user,$password,$dbName); // apro uno stream dati con il database -> mysql
-        $sql = "SELECT * FROM reparti";
+        $sql = "SELECT * FROM reparto";
         $resultSet = $db->query($sql);
         $db->close();
 
@@ -75,6 +75,7 @@ switch($sc){
                     <th>ID</th>
                     <th>Nome reparto</th>
                     <th>ID Città</th>
+                    <th>Gestione</th>
                 </tr>
             </thead>
         <tbody>");
@@ -82,7 +83,9 @@ switch($sc){
         while($record = $resultSet->fetch_assoc()){
             echo("<tr>
                 <th>".$record['id']."</th>
-                <td>".$record['nomeCitta']."</td>
+                <td>".$record['nomeReparto']."</td>
+                <td>".$record['idCittaReparto']."</td>
+                <td><a class="btn btn-danger" role="button" href="reparto.php?scelta=deleteReparto&idCittaReparto='.$record['id'].'">Cancella</a></td>
             ");
         }
         echo("</tbody> </table>");

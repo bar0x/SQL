@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS Vendita;
 DROP TABLE IF EXISTS Singolo;
 DROP TABLE IF EXISTS Artista;
 DROP TABLE IF EXISTS CasaDiscografica;
- 
+
 CREATE TABLE CasaDiscografica (
     id integer unsigned auto_increment,
     
