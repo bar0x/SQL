@@ -1,9 +1,8 @@
 <?php
-$location = "localhost";
-$user = "root";
-$password = "root";
-$dbName = "prova";
-
+$location = "sql204.infinityfree.com";
+$user = "if0_35420928";
+$password = "6DFJf1O742jiN";
+$dbName = "if0_35420928_baro";
 
 
 require("include/head.php");
@@ -18,21 +17,14 @@ if(isset($_REQUEST['stato'])) $st = $_REQUEST['stato']; else $st = null;
 switch($sc){
     case "addrecord":{
         
-        $sql = "INSERT INTO Stato(stato) VALUES('$st');";
+        $sql = "INSERT INTO Stato (stato) VALUES('$st');";
         $db = new mysqli($location,$user,$password,$dbName);
-        $db->query($sql);
-        /*
         if($db->query($sql)){
-            echo("<div class=\"alert alert-success\">
-                Record aggiunto...
-            </div>");
+            echo("ok");
         }
         else{
-            echo("<div class=\"alert alert-warning\">
-                Record non aggiunto, possibile mancanza dati o di permessi.
-            </div>");
-        }*/
-        echo("ok");
+            echo("errorDB");
+        }
         $db->close();
         break;
     }
