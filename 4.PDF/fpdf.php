@@ -61,8 +61,6 @@
         $mypdf->cell(50,10,$record['Cognome'],1,0,'r');
         $mypdf->cell(40,10,$record['idReparto'],1,0,'r');
         $mypdf->cell(50,10,$record['idCittaResidenza'],1,1,'r');
-
-        
     }
 
     $db = new mysqli("localhost","root","root","scuola_2324");
