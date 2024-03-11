@@ -16,7 +16,7 @@ switch ($day){
         if ($time >= 1008 && $time <= 1103) echo("quarta ora: aula 49");
         if ($time >= 1104 && $time <= 1207) echo("quinta ora: aula 49");
         if ($time >= 1208 && $time <= 1307) echo("sesta ora: Lab info 2");
-        else if ($time >= 1308) echo ("Out of time");
+        else if ($time >= 1308) echo ("Overtime");
         return;
     }
     case 'Tuesday':{ //martedì
@@ -26,7 +26,7 @@ switch ($day){
         if ($time >= 1008 && $time <= 1103) echo("quarta ora: aula 45");
         if ($time >= 1104 && $time <= 1207) echo("quinta ora: aula 45");
         if ($time >= 1208 && $time <= 1307) echo("sesta ora: aula 38");
-        else if ($time >= 1308) echo ("Out of time");
+        else if ($time >= 1308) echo ("Overtime");
         return;
     }
     case 'Wednesday':{ //mercoledì con pomerigg
@@ -38,7 +38,7 @@ switch ($day){
         if ($time >= 1208 && $time <= 1307) echo("sesta ora: aula 38");
         //condizione che racchiude entrambe le ore del pomeriggio
         if ($time >= 1308 && $time <= 1420) echo("settima ora: Lab info 1");
-        else if ($time >= 1421) echo ("Out of time");
+        else if ($time >= 1421) echo ("Overtime");
         return;
     }
     case 'Thursday':{ //giovedì
@@ -48,7 +48,7 @@ switch ($day){
         if ($time >= 1008 && $time <= 1103) echo("quarta ora: aula 45");
         if ($time >= 1104 && $time <= 1207) echo("quinta ora: Lab info 1");
         if ($time >= 1208 && $time <= 1307) echo("sesta ora: Lab info 1");
-        else if ($time >= 1308) echo ("Out of time");
+        else if ($time >= 1308) echo ("Overtime");
         return;
     }
     case 'Friday':{ //venerdì
@@ -58,7 +58,7 @@ switch ($day){
         if ($time >= 1008 && $time <= 1103) echo("quarta ora: aula 51");
         if ($time >= 1104 && $time <= 1207) echo("quinta ora: aula 49");
         if ($time >= 1208 && $time <= 1307) echo("sesta ora: aula 51");
-        else if ($time >= 1308) echo ("Out of time");
+        else if ($time >= 1308) echo ("Overtime");
         return;
     }
 }
